@@ -1,0 +1,535 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-categorias {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.menu-categorias h2 {
+    color: #e74c3c;
+    cursor: pointer;
+}
+
+.categorias {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.categorias.mostrar {
+    max-height: 200px; /* Ajuste para a altura desejada */
+}
+
+.categorias li {
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.categorias li:hover {
+    color: #e74c3c;
+}
+
+
+
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button img {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24C0EB;
+    padding: 1rem;
+    color: #fff;
+}
+
+/* Define o estilo para o logo */
+.logo img {
+    max-height: 60px; /* Ajuste a altura conforme necessário */
+    width: auto;
+}
+
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header .search-cart {
+    display: flex;
+    align-items: center;
+}
+    
+header .search-cart input {
+    width: 600px;
+    height: 40px;
+    border-radius: 6px;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#button {
+    width: 70px;
+    height: 40px;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer; /* Adicionado para indicar que é clicável */
+}
+
+header .icon {
+    margin-left: 1rem;
+    cursor: pointer; /* Adicionado para indicar que é clicável */
+}
+
+aside {
+    width: 200px;
+    background-color: #f8f8f8;
+    padding: 1rem;
+}
+
+aside h2 {
+    font-size: 1.2rem;
+    color: #24C0EB;
+}
+
+aside ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+aside ul li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.carousel {
+    background-color: #e8e8e8;
+    padding: 2rem;
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel .carousel-text h2 {
+    color: #4a3f5f;
+}
+
+.carousel button {
+    padding: 0.5rem 1rem;
+    background-color: #24c0ebb4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.brands {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #f8f8f8;
+}
+
+.trending {
+    padding: 1rem;
+}
+
+.trending h2 {
+    color: #4a3f5f;
+    margin-bottom: 1rem;
+}
+
+/* Grade de produtos */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: calc(33.333% - 20px); /* Dividir em 3 colunas */
+    text-align: center;
+    transition: box-shadow 0.3s; /* Efeito de transição */
+}
+
+.product:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efeito de hover */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.product button {
+    padding: 0.5rem 1rem;
+    background-color: #24C0EB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Modal do carrinho */
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.cart-header h2 {
+    color: black; /* Laranja */
+    font-weight: bold;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Mensagem de carrinho vazio */
+.cart-empty-message {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+/* Botão de continuar comprando */
+.continue-shopping {
+    background-color: #5CCEEE; /* Laranja */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Estilos para itens do carrinho */
+#cart-items {
+    width: 100%;
+    margin-top: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px; /* Espaço entre os itens */
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-item-price {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.remove-item {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.remove-item:hover {
+    background-color: rgb(255, 65, 65);
+}
+
+/* Contêiner de total do carrinho */
+#cart-total-container {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+#cart-total {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#Finalizar-button {
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    background-color: #24C0EB;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Formulários de Autenticação */
+.auth-forms {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.auth-forms.hidden {
+    display: none;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 1024px) {
+    /* Ajustar o tamanho dos itens da grade de produtos em telas médias */
+    .product {
+        width: calc(50% - 20px); /* 2 colunas em telas médias */
+    }
+
+    /* Ajustar o tamanho do campo de pesquisa */
+    header .search-cart input {
+        width: 70%; /* Deixar o campo de pesquisa com largura ajustável */
+    }
+
+    /* Ajuste do carrinho fixo */
+    .cart-modal {
+        width: 250px; /* Reduzir o tamanho do carrinho */
+    }
+
+    /* Ajuste na barra lateral (aside) */
+    aside {
+        width: 180px; /* Reduzir a largura da barra lateral */
+    }
+
+    /* Ajuste no botão de WhatsApp */
+    .whatsapp-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Ajustar os itens do carrinho */
+    .cart-item {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Reduzir o número de colunas de produtos para 1 ou 2 em telas menores */
+    .product {
+        width: 100%; /* Exibir um item por linha em telas pequenas */
+    }
+
+    /* Ajustar o campo de busca e botões */
+    header .search-cart input {
+        width: 100%; /* Largura total para dispositivos móveis */
+    }
+
+    /* Ajustar o tamanho do modal do carrinho */
+    .cart-modal {
+        width: 200px; /* Modal mais estreito */
+    }
+
+    /* Ajustar as logos dos clientes */
+    .client-logos img {
+        max-width: 60px; /* Reduzir o tamanho das logos */
+    }
+
+    /* Ajustar a grade de produtos */
+    .product-grid {
+        flex-direction: column; /* Organizar os itens verticalmente */
+        align-items: center;
+    }
+
+    /* Ajustar o botão do WhatsApp */
+    .whatsapp-button {
+        font-size: 14px;
+    }
+
+    /* Ajustar título da seção de clientes */
+    .client-title {
+        font-size: 16px; /* Menor para dispositivos móveis */
+    }
+
+    /* Ajustar espaçamentos para mobile */
+    .carousel, .client-section {
+        padding: 1rem;
+    }
+
+    /* Ajustar os ícones de navegação */
+    header .icon {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Para telas muito pequenas, como smartphones */
+    header .search-cart input {
+        width: 100%; /* Campo de pesquisa ocupa toda a largura */
+    }
+
+    .product {
+        width: 100%; /* Exibir produto em uma única coluna */
+    }
+
+    .cart-modal {
+        width: 100%; /* Carrinho ocupa toda a tela */
+        top: 0;
+        right: 0;
+    }
+
+    .cart-item {
+        font-size: 0.8rem; /* Reduzir o tamanho da fonte */
+        padding: 5px;
+    }
+
+    .whatsapp-button {
+        bottom: 20px;
+        right: 20px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .client-logos img {
+        max-width: 50px; /* Logos menores */
+    }
+
+    .client-title {
+        font-size: 14px; /* Font menor em dispositivos pequenos */
+    }
+}
+
+/* Define o estilo geral da seção */
+.client-section {
+    background-color: #f5f7fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título */
+.client-title {
+    font-size: 18px;
+    color: #6c7a89;
+    margin-bottom: 15px;
+}
+
+/* Estilo para o contêiner de logos */
+.client-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilo para as imagens dos logos */
+.client-logos img {
+    max-width: 80px;
+    height: auto;
+    filter: grayscale(100%); /* Deixa os logos em tons de cinza */
+    opacity: 0.7;
+}
+
+.client-logos img:hover {
+    filter: none; /* Remove o filtro ao passar o mouse */
+    opacity: 1;
+    transition: all 0.3s ease;
+}

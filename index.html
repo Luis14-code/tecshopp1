@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tecshop</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<link rel="icon" href="images/apple-touch-icon.png" type="image/x-png">
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="images/Captura de tela 2024-10-31 20114 (1).png" alt="Logo TEC Shop">
+        </div>
+        <div class="search-cart">
+            <input id="search-bar" type="text" placeholder="Buscar produtos eletrônicos">
+            <button id="button" onclick="searchProducts()">Buscar</button>
+        </div>
+        <nav>
+            <a href="#" onclick="showAllProducts()">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Registro</a>
+            <a href="sobre.html">Sobre</a>
+            <span class="icon" onclick="toggleCart()">🛒 Total: R$0,00 (0 itens)</span>
+        </nav>
+    </header>
+
+    <!-- BOTÃO DO WHATSAPP -->
+
+    <a href="https://wa.me/SEU_NUMERO" target="_blank" class="whatsapp-button">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+        Fale Conosco
+    </a>
+    
+    
+
+    <!-- Menu lateral de categorias -->
+    <aside>
+        <div class="menu-categorias">
+            <h2 onclick="toggleCategorias()">Categorias</h2>
+            <ul id="categorias-list" class="categorias oculto">
+                <li onclick="filterByCategory('Smartphones')">Smartphones</li>
+                <li onclick="filterByCategory('Tablets')">Tablets</li>
+                <li onclick="filterByCategory('Computadores')">Computadores</li>
+                <li onclick="filterByCategory('Acessórios')">Acessórios</li>
+                <li onclick="filterByCategory('Televisores')">Televisores</li>
+                <li onclick="filterByCategory('Áudio')">Áudio</li>
+            </ul>
+        </div>
+        
+    </aside>
+
+    <!-- Carrossel -->
+    <section class="carousel">
+        <div class="carousel-item">
+            <img src="images/banner.jpg" alt="Novos Smartphones">
+            <div class="client-section">
+                <p class="client-title">Marcas que trabalhamos</p>
+                <div class="client-logos">
+                    <img src="images/1-Photoroom (2).png" alt="iFood">
+                    <img src="images/2-Photoroom.png" alt="Vakinha">
+                    <img src="images/3-Photoroom.png" alt="Quero Delivery">
+                    <img src="images/4-Photoroom.png" alt="Sim">
+                    <img src="images/Design sem nome (1)-Photoroom.png" alt="Loft">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos em Destaque -->
+    <section class="trending">
+        <h2>Produtos em Destaque</h2>
+        <div id="product-list" class="product-grid">
+            
+            <!-- Produtos serão exibidos dinamicamente aqui -->
+        </div>
+    </section>
+
+    <!-- Carrinho de Compras -->
+    <section id="cart-modal" class="cart-modal hidden">
+        <div class="cart-header">
+            <h2>MEU CARRINHO</h2>
+            <button class="close-cart" onclick="toggleCart()">✖</button>
+        </div>
+        <div id="cart-content">
+            <div id="cart-items">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+            <div id="cart-total-container" class="hidden">
+                <p id="cart-total"></p>
+                <button class="continue-shopping" onclick="checkout()">Finalizar Compra</button>
+            </div>
+            <p class="cart-empty-message hidden">O seu carrinho está vazio.</p>
+            <button class="continue-shopping" onclick="toggleCart()">🛒 CONTINUAR COMPRANDO</button>
+        </div>
+    </section>
+    <script>
+        
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

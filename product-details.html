@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tecshop</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- CSS principal -->
+    <link rel="stylesheet" href="css/product-details.css"> <!-- CSS específico dos detalhes -->
+    <!--Google-Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<link rel="icon" href="images/apple-touch-icon.png" type="image/x-png">
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'MuseoModerno', cursive;
+}
+
+:root{
+    --text-color: #000000;
+    --bg-color: #e5e5e5;
+    --main-color: #f29494;
+    --second-color: #fff;
+    --big-font: 5.5rem;
+    --p-font: 1rem:
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px 9%;
+    transition: ease all .55s;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo i{
+    vertical-align: middle;
+    color: var(--main-color);
+    font-size: 35px;
+    margin-right: 5px;
+}
+
+.Links{
+    display: flex;
+}
+
+.Links a{
+    font-size: var(--p-font);
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0 35px;
+    transition: all ease .55s;
+}
+
+.Links a:hover{
+    color: var(--main-color);
+}
+
+.Links a.active{
+    color: var(--main-color);
+}
+
+.h-main{
+    display: flex;
+    align-items: center;
+}
+.h-btn{
+    display: inline-block;
+    padding: 10px 25px;
+    color: var(--bg-color);
+    background: var(--main-color);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    margin-right: 20px;
+    transition: all .55s;
+}
+
+.h-btn:hover{
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+}
+
+#menu-icon{
+    font-size: 40px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+    margin: 15px;
+    display: none;
+}
+
+#darkmode{
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+section{
+    padding: 10% 12%;
+    
+}
+
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-img{
+    height: 500px;
+    width: 500px;
+}
+
+.hero-img img{
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+
+}
+
+.hero-in{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,auto));
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    
+}
+
+.hero-text h1{
+    font-size: var(--big-font);
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+
+.hero-text h4{
+    margin: 5px 0 20px;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.hero-text p{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    line-height: 26px;
+    max-width: 550px;
+    margin-bottom: 4rem;
+}
+
+.box{
+    background: var(--second-color);
+    padding: 25px 40px;
+    border-radius: 1rem;
+    box-shadow: rgba(33,35,38,0.1) 0px 10px 10px -10px;
+    transition: all ease .55s;
+    cursor: pointer;
+    margin-bottom: 2rem;
+
+}
+
+.box img{
+    max-width: 100%;
+    height: auto;
+}
+
+.box h3{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 7px ;
+}
+
+.box h5{
+    color: var(--main-color);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.box:hover{
+    transform: translateY(-5px) scale(1.1);
+}
+
+body.color{
+    --text-color: #fff;
+    --bg-color: #08162a;
+    --second-color: #2b3544;
+
+}
+
+
+
+
+@media (max-width: 1230px){
+
+    header{
+        padding: 3%;
+    }
+    
+  .hero{
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .hero-text{
+    order: 2;
+
+  }
+
+  section{
+    padding: 50px 5%;
+  }
+
+  .hero-img{
+    margin: auto;
+    height: auto;
+    width: auto;
+  }
+
+  .hero-img img{
+    width: 100%;
+    height: auto;
+    max-width: 650px;
+  }
+
+  :root{
+
+    --big-font: 4rem;
+    --p-font: 15px:
+    
+  }
+
+  .box h3{
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+
+}
+
+@media (max-width: 1070px){
+
+    header{
+        padding: 10px 3%;
+    }
+}
+
+@media (max-width: 1062px){
+    #menu-icon{
+        display: initial;
+    }
+
+    .Links{
+        position: absolute;
+        top: -700px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #000;
+        transition: all ease .55s;
+        text-align: left;
+
+    }
+
+    .Links a{
+        display: block;
+        font-size: 23px;
+        font-weight: 400;
+        margin: 0.8rem 1.8rem;
+        color: var(--second-color);
+    }
+
+        .Links.open{
+            top: 100%;
+        }
+
+}
+@media (max-width: 600px){
+    .hero-in{
+        grid-template-columns: repeat(auto-fit,minmax(190px,auto));
+        gap: 18px;
+    }
+
+    .box{
+        padding: 10px 30px;
+    }
+
+    .h-btn{
+        padding: 6px 14px;
+        margin-right: 8px;
+    }
+
+  
+}
+
+@media (max-width: 420px){
+
+    :root{
+        --big-font: 3rem;
+        --p-font:14px;
+    }
+
+    .logo{
+        font-size: 30px;
+    }
+
+    #menu-icon{
+        margin-right: 8px;
+    }
+
+}
+
+@media (max-width: 360px){
+
+    .h-btn{
+        padding: 4px 10px;
+        margin-right: 5px;
+    }
+
+    .logo{
+        font-size: 25px;
+    }
+
+
+
+}
+
+.image-gallery {
+    text-align: center; /* Centraliza a imagem dentro do container */
+    margin: 20px; /* Espaçamento ao redor da galeria de imagens */
+}
+
+.image-gallery img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do seu container */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 400px; /* Define um limite máximo de largura */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao aumento */
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1); /* Aumenta a imagem em 10% ao passar o mouse */
+}
+
+* Define o estilo para o logo */
+.logo img {
+    max-height: 70px; /* Ajuste a altura conforme necessário */
+    width: auto;
+}
+
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/Captura de tela 2024-10-31 20114 (1).png" alt="Logo TEC Shop">
+        </div>
+        <div class="search-cart">
+            <input id="search-bar" type="text" placeholder="Buscar produtos eletrônicos">
+            <button id="button" onclick="searchProducts()" style="color: #000;">Buscar</button>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Registro</a>
+            <a href="sobre.html">Sobre</a>
+            <span class="icon" onclick="toggleCart()">🛒 Total: R$0,00 (0 itens)</span>
+        </nav>
+    </header>
+    
+    <section class="hero" id="product-section">
+        <div class="hero-text">
+            <h1 id="product-title"></h1>
+            <h4 id="product-price"></h4>
+            <p id="product-description"></p> 
+            <button onclick="addToCart">comprar</button>
+        </div>
+        <div class="hero-img">
+            <img id="product-image" src="" alt="Imagem do Produto">
+            <img id="product-image"src="" alt="imagem do produto">
+        </div>
+    </section>
+    
+       
+    
+        <a href="https://wa.me/SEU_NUMERO" target="_blank" class="whatsapp-button">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+            Fale Conosco
+        </a>
+
+        <section id="cart-modal" class="cart-modal hidden">
+            <div class="cart-header">
+                <h2>MEU CARRINHO</h2>
+                <button class="close-cart" onclick="toggleCart()">✖</button>
+            </div>
+            <div id="cart-content">
+                <div id="cart-items">
+                    <!-- Itens do carrinho serão adicionados aqui -->
+                </div>
+                <div id="cart-total-container" class="hidden">
+                    <p id="cart-total"></p>
+                    <button onclick="checkout()">Finalizar Compra</button>
+                </div>
+                <p class="cart-empty-message hidden">O seu carrinho está vazio.</p>
+                <button class="continue-shopping" onclick="toggleCart()">🛒 CONTINUAR COMPRANDO</button>
+            </div>
+        </section>
+   
+
+    <!-- Seção de Descrição do Produto -->
+    <section class="product-description">
+        <h2>Descrição do Produto</h2>
+        <p id="detailed-description"></p>
+    </section>
+
+    <!-- Seção de Comentários -->
+    <div class="comment-container">
+        <h2>Comentários</h2>
+        <div class="comments-list">
+            <div class="comment">
+                <strong>Comentário do Usuário 1</strong>
+                <div class="stars">
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <p>Adorei o produto, muito bom!</p>
+            </div>
+            <div class="comment">
+                <strong>Comentário do Usuário 2</strong>
+                <div class="stars">
+                    <span>⭐⭐⭐</span>
+                </div>
+                <p>Não gostei muito, esperava mais.</p>
+            </div>
+        </div>
+
+        <h2>Deixe seu Comentário</h2>
+        <form class="comment-form" onsubmit="submitComment(event)">
+            <div class="stars-selection">
+                <label>
+                    <input type="radio" name="stars" value="1" required>
+                    ⭐
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="2" required>
+                    ⭐⭐
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="3" required>
+                    ⭐⭐⭐
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="4" required>
+                    ⭐⭐⭐⭐
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="5" required>
+                    ⭐⭐⭐⭐⭐
+                </label>
+            </div>
+            <textarea placeholder="Escreva seu comentário aqui..." required></textarea>
+            <button type="submit">Enviar Comentário</button>
+        </form>
+    </div>
+
+    <!-- Seção de Produtos Semelhantes -->
+    <section class="similar-products">
+        <h2>Produtos Semelhantes</h2>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <img src="images/download-Photoroom.png" alt="Produto Similar 1">
+                    <p>sansung S21</p>
+                    <p>R$4999.99</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/iphone_13_pro-removebg-preview.png" alt="Produto Similar 2">
+                    <p>iphone13 pro </p>
+                    <p>R$6999.99</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/oie_transparent (5).png" alt="Produto Similar 3">
+                    <p>powerbank </p>
+                    <p>R$58.99</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Macbook-pro-m1-13-pulgadas-Photo (1).png" alt="Produto Similar 4">
+                    <p>MacBook pro</p>
+                    <p>R$12999.99</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/oie_transparent (8).png" alt="Produto Similar 4">
+                    <p>cadeira gamer</p>
+                    <p>R$638.90 </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/fone-de-ouvido-multilaser-ph246-bluetooth-preto-5716-Photoroom.png" alt="Produto Similar 4">
+                    <p>fone de ouvido</p>
+                    <p>R$299.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button onclick="moveCarousel(-1)">❮ Anterior</button>
+            <button onclick="moveCarousel(1)">Próximo ❯</button>
+        </div>
+    </section>
+    <script>
+        let currentIndex = 0;
+        const itemsPerView = 4;
+        const carouselContainer = document.querySelector('.carousel-container');
+        const totalItems = carouselContainer.children.length;
+
+        function moveCarousel(direction) {
+            if (direction === 1) { // Próximo
+                const firstItem = carouselContainer.firstElementChild;
+                carouselContainer.appendChild(firstItem.cloneNode(true));
+                carouselContainer.removeChild(firstItem);
+            } else if (direction === -1) { // Anterior
+                const lastItem = carouselContainer.lastElementChild;
+                carouselContainer.insertBefore(lastItem.cloneNode(true), carouselContainer.firstElementChild);
+                carouselContainer.removeChild(lastItem);
+            }
+        }
+
+        function submitComment(event) {
+            event.preventDefault();
+            const form = event.target;
+            const textarea = form.querySelector('textarea');
+            const stars = form.querySelector('input[name="stars"]:checked');
+            const comment = textarea.value;
+
+            const commentsList = document.querySelector('.comments-list');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>Você</strong>
+                                    <div class="stars">
+                                        <span>${'⭐'.repeat(stars.value)}</span>
+                                    </div>
+                                    <p>${comment}</p>`;
+            
+            commentsList.prepend(newComment);
+            form.reset();
+        }
+        // Constante de produtos
+        const products = [
+    {
+        id: 1,
+        title: 'Smartphone Galaxy S21',
+        price: '4999.99',
+        description: 'O Galaxy S21 é o smartphone que você precisa, com câmera de alta qualidade e desempenho excepcional.',
+        detailedDescription: 'O smartphone oferece uma experiência de fotografia profissional com suas 4 câmeras principais, permitindo explorar diversas possibilidades criativas, como iluminação, planos e efeitos para capturar fotos de alta qualidade.Com 4 GB de memória RAM, o dispositivo garante um desempenho rápido e eficiente, permitindo a execução de várias tarefas simultâneas, jogos e navegação sem travamentos.Para garantir máxima segurança, o aparelho oferece duas opções de desbloqueio: o sensor de impressão digital, que permite acessar o dispositivo com um toque, e o reconhecimento facial, que é até 30% mais rápido.Com uma bateria de 5000 mAh, o smartphone oferece vida útil prolongada, permitindo jogar, assistir a vídeos ou trabalhar por mais tempo sem precisar recarregar.',
+        images: [
+            'images/Captura de tela 2024-11-05 173236-Photoroom.png'
+        ]
+    },
+    {
+        id: 2,
+        title: 'iPhone 13 Pro',
+        price: '6999.99',
+        description: 'O iPhone 13 Pro é o último modelo da Apple, com processador poderoso e excelente qualidade de câmera.',
+        detailedDescription: 'O iPhone 13 oferece tecnologia avançada com câmeras duplas de 12 MP, incluindo modo retrato, controle de profundidade, iluminação de retrato, HDR inteligente e gravação de vídeo Dolby Vision HDR 4K a 30 fps. A câmera frontal TrueDepth de 12 MP também oferece modo retrato e Smart HDR 3. Sua tela proporciona uma experiência cinematográfica, ajustando automaticamente o foco nos vídeos. Equipado com o chip A15 Bionic e GPU de 4 núcleos, o iPhone 13 oferece desempenho impressionante, com design de vidro e aço inoxidável de grau cirúrgico, resistente à água e poeira (IP68). Ideal para quem busca desempenho, durabilidade e estilo.',
+        images: [
+            'images/iphone_13_pro-removebg-preview.png'
+            
+        ]
+    },
+    {
+        id: 3,
+        title: 'MacBook Pro 16"',
+        price: '12999.99',
+        description: 'O MacBook Pro é perfeito para profissionais que necessitam de um desempenho potente.',
+        detailedDescription: 'graças à tela Retina envolvente de 16 polegadas com pretos e brancos muito intensos e até 500 nits de brilho (1). Aproveite o poder dos processadores de seis ou oito núcleos e dos chips gráficos AMD Radeon Pro série 5000M com até 8 GB de memória de alta largura de banda a maior potência em gráficos já colocada em um MacBook Pro. Ele vem com até 64 GB de memória com 2666 MHz, até 8 TB de armazenamento (3), Touch ID, Touch Bar e bateria para o dia todo (2). Criado para profissionais que colocam a potência acima de tudo, o MacBook Pro é perfeito para fazer qualquer tipo de tarefa, em qualquer lugar.Avisos Legais(1) O tamanho da tela é medido na diagonal.(2) A duração da bateria varia de acordo com o uso e a configuração.(3) 1 GB = 1 bilhão de bytes e 1 TB = 1 trilhão de bytes. A capacidade real após a formatação é menor.',
+        images: [
+            'images/Macbook-pro-m1-13-pulgadas-Photo (1).png']
+    },
+    {
+        id: 4,
+        title: 'Tablet iPad Pro',
+        price: '7999.99',
+        description: 'O iPad Pro é o tablet mais poderoso da Apple, ideal para criadores de conteúdo.',
+        detailedDescription: 'A nova tela Ultra Retina XDR do iPad Pro traz tecnologia OLED em camada dupla, com brilho extremo, contraste preciso e tecnologias avançadas como ProMotion e True Tone, oferecendo uma experiência visual incrível. O Modo de Referência garante precisão de cores em todas as etapas do trabalho.Equipado com o chip M4 da Apple, o iPad Pro oferece desempenho impressionante, com gráficos acelerados por hardware e um Neural Engine que potencializa a IA. Sua GPU poderosa oferece gráficos espetaculares, enquanto o design ultrafino e leve o torna ideal para diversas tarefas.O iPadOS é projetado para tornar seu fluxo de trabalho mais eficiente, permitindo rodar apps profissionais e jogos de alto desempenho com uma experiência intuitiva por toque.Com um sistema de câmera Pro e Scanner LiDAR, microfones de qualidade de estúdio e quatro alto-falantes, o iPad Pro é ideal para criar, editar e compartilhar conteúdos. Capture vídeos em ProRes 4K e aproveite a IA para melhorar documentos escaneados. A nova câmera frontal horizontal também otimiza as chamadas de vídeo.Além disso, o iPad Pro permite conectar monitores externos de até 6K e dispositivos de armazenamento via Thunderbolt, oferecendo versatilidade para expandir suas possibilidades de trabalho e criatividade.',
+        images: [
+            'images/ipad_2_2_1-Photoroom.png'
+        ]
+    },
+    {
+        id: 5,
+        title: 'TV Samsung 55" 4K',
+        price: '3999.99',
+        description: 'TV 4K da Samsung com excelente qualidade de imagem e recursos inteligentes.',
+        detailedDescription: 'A Smart TV Samsung BE55C-H de 55 polegadas oferece resolução 4K UHD e tecnologia LED, garantindo imagens vibrantes com a tecnologia PurColor e o processador Crystal 4K. Seu design elegante com borda ultrafina se adapta a diversos ambientes. Com a função Business TV, é ideal para pequenas empresas, exibindo conteúdo promocional e programação regular. A plataforma Samsung VXT CMS permite o gerenciamento remoto de conteúdos e dispositivos, enquanto o Playlock bloqueia a tela com código PIN para maior segurança.A TV conta com áudio Dolby, 20W de saída e suporte a Bluetooth. Oferece funcionalidades inteligentes como compatibilidade com dispositivos móveis, Microsoft 365, Wireless Dex e espelhamento de som. Em conectividade, possui 3 HDMI, 1 USB, Wi-Fi 5, Bluetooth 5.2 e Ethernet. O consumo de energia é de 150W, e as dimensões são 1230,5 x 707,2 x 59,9 mm (sem suporte) e 1230,5 x 783,3 x 250,2 mm (com suporte). O peso é de 13,9kg sem suporte e 14,2kg com suporte. A embalagem inclui controle remoto, pilhas, manual e cabo de força.',
+        images: [
+            'images/210024-Photoroom.png'
+        ]
+    },
+    {
+        id: 6,
+        title: 'Fone de Ouvido Bluetooth',
+        price: '299.99',
+        description: 'Fone de ouvido Bluetooth com som de alta qualidade e conforto.',
+        detailedDescription: ' Fone de Ouvido Tune 520 Bluetooth 5.3 oferece excelente desempenho sonoro e grande praticidade. Com conexão Bluetooth 5.3, ele proporciona liberdade total de movimento, permitindo ouvir suas músicas favoritas sem fios. Sua sensibilidade de 102 db garante som nítido e potente, enquanto a tecnologia Pure Bass oferece graves profundos e de alta qualidade.Além da experiência sonora incrível, o fone permite fazer chamadas viva voz, tornando o uso ainda mais versátil. Seu design leve e dobrável facilita o transporte, sendo ideal para levar para qualquer lugar.Comuma impressionante autonomia de até 57 horas de reprodução contínua, você pode curtir suas músicas sem preocupação. E, caso precise de uma carga rápida, 5 minutos de carregamento garantem 3 horas de reprodução.A função de conexão multipontos é outro grande diferencial, permitindo conectar dois dispositivos simultaneamente e alternar entre eles com facilidade. Compatível com a maioria dos dispositivos móveis Bluetooth, esse fone proporciona uma experiência completa e sem interrupções',
+        images: [
+            "images/fone-de-ouvido-multilaser-ph246-bluetooth-preto-5716-Photoroom.png"
+        ]
+    },
+    {
+    id: 7,
+    title: 'Powerbank Carregamento Portátil 10000mah Múltiplas Saídas Cor Preto',
+    price: '58.99',
+    description: 'Power Bank 10000mAh portátil com cabos inclusos, ideal para manter seus dispositivos carregados com segurança e praticidade onde você estiver.',
+    detailedDescription: 'O Power Bank 10000mAh é uma solução prática para manter seus dispositivos carregados em qualquer lugar. Com cabos Micro USB, USB-C e Lightning inclusos, é compatível com uma ampla variedade de dispositivos, como smartphones, tablets e câmeras. Oferece carregamento rápido com duas portas USB para carregar dois dispositivos simultaneamente. Seu design compacto e leve facilita o transporte, e conta com proteção contra sobrecarga, curto-circuito e superaquecimento. A capacidade de 10000mAh garante várias recargas e o indicador LED mostra o nível de bateria restante. É ideal para viagens, trabalho ou uso diário.',
+    images: [
+        "images/oie_transparent (5).png"
+    ]
+},
+{
+    id: 8,
+    title: 'Altifalante inteligente Alexas Echo Dot 4ª Geração',
+    price: '499.99',
+    description: 'Assistente virtual inteligente Alexa com controle por voz, compatível com diversos dispositivos, para organizar tarefas, reproduzir música, verificar o clima e garantir segurança e privacidade.',
+    detailedDescription: 'O Echo Dot é um assistente virtual que facilita o controle da sua casa e o gerenciamento de tarefas através de comandos de voz. Com compatibilidade com diversos dispositivos inteligentes, você pode controlar luzes, câmeras de segurança, trancar portas e muito mais. Também permite fazer chamadas para amigos e familiares, além de acessar várias Skills, como pedir comida ou ouvir músicas de serviços como Amazon Music, Spotify e Deezer. Seu design compacto e a fácil configuração por Wi-Fi tornam o dispositivo ideal para qualquer ambiente. A Alexa oferece controle total de privacidade, e o dispositivo vem com um alto-falante integrado e conectividade Bluetooth. A configuração é simples e rápida, e a caixa inclui Echo Dot, carregador bivolt e guia de início rápido.',
+    images: [
+        "images/oie_transparent (10).png"
+    ]
+},
+{
+    id: 9,
+    title: 'Cadeira Escritório Gamer Ergonômica Reclinável',
+    price: '638.99',
+    description: 'Cadeira ergonômica e versátil da Led Tools, ideal para conforto e postura adequada em longas horas de trabalho ou jogo.',
+    detailedDescription: 'A cadeira da Led Tools foi projetada para garantir conforto e bem-estar, especialmente para quem passa longas horas sentado, seja jogando, trabalhando ou estudando. Seu design ergonômico adapta-se ao corpo, promovendo uma postura correta e evitando problemas nas zonas lombar, dorsal e cervical. Com encosto reclinável, permite ajustar a inclinação e até balançar durante pausas. O ajuste de altura proporciona a posição ideal em relação à mesa, garantindo conforto. Os apoios de braços favorecem a postura e a facilidade de movimento, enquanto as rodas e o assento giratório 360º garantem praticidade e mobilidade no seu espaço.',
+    images: [
+        "images/oie_transparent (8).png"
+    ]
+}
+
+];
+
+
+        // Função para exibir as informações do produto
+        function displayProduct(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        document.getElementById('product-title').textContent = product.title;
+        document.getElementById('product-price').textContent = `R$${product.price}`;
+        document.getElementById('product-description').textContent = product.description;
+
+        // Exibe a imagem principal do produto
+        const productImageContainer = document.querySelector('.hero-img');
+        productImageContainer.innerHTML = `<img src="${product.images[0]}" alt="${product.title}">`;
+        
+       
+    }
+}
+
+
+// Carrega o ID do produto selecionado do localStorage
+const selectedProductId = parseInt(localStorage.getItem('selectedProductId'));
+
+// Chama a função com o ID do produto desejado
+if (selectedProductId) {
+    displayProduct(selectedProductId);
+} else {
+    console.error("Nenhum ID de produto selecionado encontrado.");
+}
+// Encontrar o produto selecionado no array
+const selectedProduct = products.find(product => product.id === selectedProductId);
+
+// Puxar o detailedDescription e exibir no parágrafo
+document.getElementById("detailed-description").innerText = selectedProduct.detailedDescription;
+
+    </script>
+
+    
+    <script src="/js/script.js"></script>
+    
+</html>

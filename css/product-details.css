@@ -1,0 +1,494 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    --bg-color:var(--bg-color) #24C0EB;
+    --tex-color: #000000;
+    --main-color: #34e7f8;
+    --other-color: #000000;
+    --h1-font: 4rem;
+    --p-font: 1rem;
+}
+
+
+body{
+    background-color:#005bb5  ;
+    color: var(--tex-color);
+}
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button img {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 8%;
+
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    color: var(--tex-color);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo i{
+    color: var(--main-color);
+    font-size: 32px;
+    margin-right: 5px;
+}
+
+.navegação{
+    display: flex;
+}
+
+.navegação a{
+    color: var(--other-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin: 0 30px;
+    transition: a .55s ease;
+}
+
+.navegação a:hover{
+    color: var(--main-color);
+
+}
+
+
+.header-icons{
+    display: flex;
+    align-items: center;
+}
+
+#menu{
+    font-size: 35px;
+    color: var(--tex-color);
+    z-index: 10001;
+    cursor: pointer;
+}
+
+.header-icons i{
+    margin-right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.header-icons i:hover{
+    transform: translateY(-5px);
+    color: var(--main-color);
+}
+
+
+.section{
+
+    padding: 0 15%;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-text h1{
+    font-size: var(--h1-font);
+    line-height: 1.2;
+    margin-bottom: 2px;
+}
+
+.home-text h5{
+    color: #02030499;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.home-text h3{
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+
+.home-img img{
+    max-width: 100%;
+    width: 28rem;
+    height: auto;
+    margin-left: 25%;
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 15px 70px;
+    font-size: 16px;
+    font-weight: 500;
+    background: transparent;
+    border: solid 2px var(--tex-color);
+    transition: all.55 ease;
+    color: #000000;
+}
+
+.btn:hover{
+    background: var(--tex-color);
+    border: 2px solid var(--tex-color);
+    color: #000;
+}
+
+.main{
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main li img{
+    width: 50px;
+    height: auto;
+    max-width: 100%;
+}
+
+.row{
+    background: var(--main-color);
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    justify-content: center;
+    transition: all.55s ease;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.row:hover {
+    transform: translateY(-8px);
+
+}
+
+.row2{
+    background: #ff758d;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all.55s ease;
+    cursor: pointer;
+}
+
+.row2:hover{
+    transform: translateY(-8px);
+}
+
+.row3{
+    background: #ffd06d;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all.55s ease;
+    cursor: pointer;
+
+}
+
+.row3:hover{
+    transform: translateY(-8px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .product-info {
+        padding: 0;
+    }
+}
+
+/* Estilos para a seção de avaliações e comentários */
+.review-container,
+.comment-container {
+    margin-top: 2rem;
+}
+
+.review-container h2,
+.comment-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.comment {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form textarea {
+    resize: none;
+    height: 100px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.comment-form button {
+    align-self: flex-start; /* Botão alinhado à esquerda */
+}
+
+.comments-list {
+    margin-bottom: 1rem; /* Espaço entre os comentários e o formulário */
+}
+
+.stars {
+    color: #f39c12; /* Cor das estrelas */
+    font-size: 1rem; /* Tamanho das estrelas */
+    margin-bottom: 0.5rem; /* Espaçamento entre estrelas e texto */
+}
+
+.carousel-wrapper {
+    overflow: hidden; /* Oculta o excesso de itens fora do contêiner */
+    position: relative; /* Necessário para posicionar o carrossel */
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+}
+
+.carousel {
+    display: flex; /* Alinha os itens do carrossel em linha */
+    animation: scroll 10s linear infinite; /* Animação de rolagem automática */
+}
+
+.carousel-item {
+    min-width: 25%; /* Defina uma largura mínima para cada item */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+.stars-selection {
+    margin-bottom: 1rem; /* Espaço abaixo da seleção de estrelas */
+}
+
+.stars-selection label {
+    margin-right: 0.5rem; /* Espaço entre as estrelas */
+    cursor: pointer; /* Indica que é clicável */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #dcdcdc, #ffffff); /* Gradiente de cinza escuro a branco */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #24C0EB;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+nav .icon {
+    cursor: pointer;
+}
+
+.product-detail-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-gallery img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+.product-name {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.price, .discount-price {
+    font-size: 24px;
+    color: #e63946;
+}
+
+.description {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.button-container {
+    margin: 20px 0;
+}
+
+button {
+    background-color: #24C0EB;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+.social-icons img {
+    width: 24px;
+    margin: 0 5px;
+}
+
+.review-container {
+    margin-top: 20px;
+}
+
+.review {
+    margin-bottom: 15px;
+}
+
+.stars span {
+    color: #f39c12;
+}
+
+.product-description, .comment-container, .similar-products {
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comments-list {
+    margin: 20px 0;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.stars-selection {
+    margin-bottom: 10px;
+}
+
+.stars-selection label {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.similar-products .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.carousel-item {
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
